@@ -1,0 +1,29 @@
+/* 하위 선택자 */
+div p {
+    color: red;
+}
+
+/* 자식 선택자 */
+div>b {
+    color : orange;
+}
+
+/* 인접 형제 선택자 */
+p + b {
+    color : yellow
+}
+
+/* 속성 선택자-1 */
+a[href] {
+    background-color: green;
+}
+
+/* 속성 선택자-2 */
+a[href="http://daum.net"] {
+    background-color: blue;
+}
+
+a[target] {
+    font-size: 400%;
+    color: pink;
+}
