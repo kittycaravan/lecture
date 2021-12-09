@@ -1,0 +1,31 @@
+a{
+    font-size: 400%;
+}
+
+a:link{
+    color:red;
+}
+
+a:visited{
+    color:orange;
+}
+
+a:hover{
+    color:yellow;
+}
+
+a:active{
+    color:green;
+}
+
+
+
+
+input:focus{
+    background-color: pink;
+}
+
+div>p:target {
+    background-color: gray;
+}
+
