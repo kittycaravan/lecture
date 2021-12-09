@@ -1,35 +1,30 @@
-div {
-    width: 100px;
-    height: 100px;
-}
-
 #a {
+    width: 800px;
+    height: 100px;
     background-color: red;
     float: left;
-    width: 800px;
-    height: 200px;
 }
 #b {
-    background-color: orange;
     width: 200px;
-    height: 200px;
+    height: 100px;
+    background-color: orange;
     float: left;
 }
 #c {
-    background-color: yellow;
+    clear: left;
     width: 1000px;
     height: 50px;
-    clear: left;
+    background-color: yellow;
 }
 #d {
-    background-color: green; 
+    background-color: green;    
     width: 200px;
-    height: 400px;   
+    height: 600px;
     float: left;
 }
 #e {
     background-color: blue;
     width: 800px;
-    height: 400px; 
+    height: 600px;
     float: left;
 }
