@@ -29,14 +29,11 @@ window.onload = function(){
     rpcInputText = document.getElementById("rpc_input_text");       // 연결
     rpcResultScreen = document.getElementById("rpc_result_screen");       // 연결
 
+    // rpcResultScreen.value = "고양이";
     
 }
 
 function rpcInputButtonClick(){
-
-    //결과 화면 초기화
-    resultString = "";
-    rpcResultScreen.value = resultString;
 
     while(true){    // while 무한루프 걸기는 이렇게 하면 됩니다
         // userRpc = prompt("가위,바위,보 중에 하나를 입력하세요:");
@@ -61,13 +58,16 @@ function rpcInputButtonClick(){
 
     
     // dw("유저:"+userRpc);
-    resultString += "유저:"+userRpc;
+    // resultString += "유저:"+userRpc;
+    resultString = "유저:"+userRpc; // * 주의 * 다시 게임을 할 경우 이 명령줄로 인해 기존 누적된 내용이 초기화가 됨.
     
     // br();
-    resultString += "\n";
+    // resultString += "\n";
+    resultString = resultString + "\n";
         
     // dw("컴:"+comRpc);    
-    resultString += "컴:"+comRpc;
+    // resultString += "컴:"+comRpc;
+    resultString = resultString + "컴:"+comRpc;
 
     // br();
     resultString += "\n";
@@ -115,7 +115,8 @@ function rpcInputButtonClick(){
             break;
     }
     // dw(winDrawLose);    
-    resultString += "결과: " + winDrawLose;
+    // resultString += "결과: " + winDrawLose;
+    resultString = resultString + "결과: " + winDrawLose;
 
     // 결과 출력
     rpcResultScreen.value = resultString;
