@@ -8,15 +8,13 @@ displayCharactersInfo();
 hr();
 dw("전투 시작")
 hr();
-procBattleTurn();
-procBattleTurn();
-procBattleTurn();
-procBattleTurn();
-procBattleTurn();
-procBattleTurn();
-procBattleTurn();
-procBattleTurn();
-procBattleTurn();
+
+//전투 무한 루프 처리
+var loop = true;
+while(loop){
+    loop = procBattleTurn();
+}
+
 
 
 function procBattleTurn(){
@@ -31,6 +29,13 @@ function procBattleTurn(){
     
     
     displayCharactersInfo();
+
+    //todo hp 검사하기
+    if(elf.currentHp <= 0 || orc.currentHp <= 0){
+        return false;
+    } else {
+        return true;
+    }
 }
 
 
