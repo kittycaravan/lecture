@@ -1,15 +1,15 @@
-#screen_gameobj {
+#screen_game_object {
     width: 800px;
     height: 150px;
-    background-color: rgb(115, 152, 161);
+    background-color: rgb(99, 194, 150);
 }
-#screen_message {
+#screen_message_box {
     width: 800px;
-    height: 600px;
-    background-color: rgb(72, 131, 72);
-}
-#screen_player {
-    width: 800px;
-    height: 100px;
+    height: 500px;
     background-color: pink;
+}
+#screen_player_info {
+    width: 800px;
+    height: 200px;
+    background-color: rgb(143, 179, 194);
 }

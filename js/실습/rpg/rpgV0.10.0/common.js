@@ -1,13 +1,18 @@
 /*
     공통함수들을 모아놓음
 */
-function print(str){
-    var screenString = screenMessage.value;
+
+/* textarea 에 텍스트 입력 처리 */
+function tv(str){
+    var screenString = screenMessageBox.value;
     screenString = screenString + str;
-    screenMessage.value = screenString;
+    screenMessageBox.value = screenString;
 }
-function printPlayer(str){
-    screenPlayer.value = str;
+function tvPlayerInfo(str){
+    var screenString = screenPlayerInfo.value;
+    // screenString = screenString + str;
+    // screenPlayerInfo.value = screenString;
+    screenPlayerInfo.value = str;
 }
 function br(){
     document.write("<br>");

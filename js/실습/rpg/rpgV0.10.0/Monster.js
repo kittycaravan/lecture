@@ -9,6 +9,6 @@ function Monster(name,hp,attack){
     /* 멤버함수, 멤버메소드 */
     this.info = function(){
         //todo 출력 전환
-        print("["+this.name+"("+this.currentHp + "/" + this.maxHp+")]");
+        tv("["+this.name+"("+this.currentHp + "/" + this.maxHp+")]");
     }
 }
