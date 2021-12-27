@@ -41,7 +41,7 @@ rpg (v0.14.0)
 [v0.14.0 업데이트 내용]
 - 메세지 textarea 의 글이 길어질 경우 스크롤이 자동으로 아래로 내려가도록 처리
 - main.js 의 function 들을 functions.js 로 분리함
-- endBattle() 의 currentTurnType = "비전투" 를 "대기" 로 변경
+- endBattle() 의 currentMode = "비전투" 를 "대기" 로 변경
 
 todo:
 - 임시로 고정된 형태로 이벤트 시나리오를 짜고 적용함 ( 동쪽으로 이동 * 3턴 - 전투진행 )
