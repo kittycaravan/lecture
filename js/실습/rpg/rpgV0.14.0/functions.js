@@ -24,7 +24,7 @@ function endBattle() {
     // - 전투 종료 후 경험치 획득 메세지 출력 ex. 불쌍한 토끼, 엠피스에게 경험치 100 을 주고 죽었습니다.
     tv("불쌍한 " + orc.name + ", " + elf.name + "에게 경험치 " + orc.exp + "을 주고 죽었습니다.\n");
     getReward();
-    currentTurnType = "대기"; // 현재 턴 타입을 <대기>로 전환
+    currentMode = "대기"; // 현재 턴 타입을 <대기>로 전환
     tvGameObjectClear();    // 게임 오브젝트 화면을 지움
 }
 
@@ -50,7 +50,7 @@ function procBattleTurn() {
 }
 
 function turn(){
-    if(currentTurnType == "전투"){
+    if(currentMode == "전투"){
         procBattleTurn();
     } else {
         procNormalTurn();
