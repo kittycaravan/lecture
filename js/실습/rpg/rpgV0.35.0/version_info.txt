@@ -155,6 +155,8 @@ rpg (v0.35.0)
 <코드정리> functions.js 를 각 기능 별로 분리
 
 [v0.35.0 업데이트 내용]
-
+<코드정리> functions.js 를 각 기능 별로 분리(functions_reward.js 분리 추가)
+<코드정리> 함수명 변경 gameObjectClick() functions_mob.js >> mobClick()
+<코드정리> 함수명을 functions_XXX 에 맞춰 접두어를 맞추는식으로 변경
 
 **********************************************************************/
