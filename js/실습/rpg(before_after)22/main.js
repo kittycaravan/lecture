@@ -7,7 +7,6 @@ function displayCharactersInfo() {
 /* 보상 획득 처리 */
 function getReward() {
     elf.money = elf.money + orc.money;
-    //todo 출력 전환
     tv(orc.money + "원을 얻었습니다.\n");
 }
 
@@ -19,15 +18,11 @@ function getRandomAttackValue(attack) {
 
 // - 전투 종료 처리(종료메세지 출력, 경험치 획득)
 function endBattle() {
-    //todo 출력 전환
     tv("전투 종료\n");
-    // br();
     // 경험치 처리
     elf.exp = elf.exp + orc.exp;
     // - 전투 종료 후 경험치 획득 메세지 출력 ex. 불쌍한 토끼, 엠피스에게 경험치 100 을 주고 죽었습니다.
-    //todo 출력 전환
     tv("불쌍한 " + orc.name + ", " + elf.name + "에게 경험치 " + orc.exp + "을 주고 죽었습니다.\n");
-    // br();
     getReward();
 
 }
@@ -38,13 +33,9 @@ function procBattleTurn() {
     var playerDamage = getRandomAttackValue(elf.attack);
 
     orc.currentHp = orc.currentHp - playerDamage;
-    //todo 출력 전환
     tv(elf.name + "가 " + orc.name + "에게 데미지를 " + playerDamage + " 입혔습니다.\n");
-    elf.currentHp = elf.currentHp - monsterDamage;    
-    //todo 출력 전환
+    elf.currentHp = elf.currentHp - monsterDamage;
     tv(orc.name + "가 " + elf.name + "에게 데미지를 " + monsterDamage + " 입혔습니다.\n");
-
-
 
     // hp 검사하기
     if (elf.currentHp <= 0 || orc.currentHp <= 0) {
@@ -58,9 +49,10 @@ function procBattleTurn() {
 }
 
 function turn(){
-    console.log("현재 턴은? :"+turnCount);
-    turnCount++;    // 턴 1 증가
+    procBattleTurn();
+    turnCount++;
     itTurn.value = turnCount;   // 현재 턴 표시
+    console.log("현재 턴:"+turnCount);
 }
 
 
@@ -70,7 +62,7 @@ var screenPlayerInfo; //screen_player_info
 var orc = new Monster("오크전사", 100, 10);
 var elf = new Character("엠피스", 200, 30);
 var turnCount = 0;
-var itTurn;
+var itTurn; // 현재 턴 수를 표시하는 input text 변수
 
 window.onload = function () {
     screenMessageBox = document.getElementById("screen_message_box");
@@ -80,14 +72,15 @@ window.onload = function () {
     
     displayCharactersInfo();
 
-
-    //todo 출력 전환    
     tv("전투 시작\n");
 
     //전투 무한 루프 처리
-    var loop = true;
-
-    while (loop) {
-        loop = procBattleTurn();                      
-    }
+    // var loop = true;
+    // while (loop) {
+    //     loop = procBattleTurn();
+    // }
 }
+
+
+
+
