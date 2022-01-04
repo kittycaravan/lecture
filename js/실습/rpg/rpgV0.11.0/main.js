@@ -40,7 +40,7 @@ function procBattleTurn() {
     orc.currentHp = orc.currentHp - playerDamage;
     //todo 출력 전환
     tv(elf.name + "가 " + orc.name + "에게 데미지를 " + playerDamage + " 입혔습니다.\n");
-    elf.currentHp = elf.currentHp - monsterDamage;
+    elf.currentHp = elf.currentHp - monsterDamage;    
     //todo 출력 전환
     tv(orc.name + "가 " + elf.name + "에게 데미지를 " + monsterDamage + " 입혔습니다.\n");
 
@@ -58,8 +58,8 @@ function procBattleTurn() {
 }
 
 function turn(){
-    console.log("로그다....");
-    turnCount++;
+    console.log("현재 턴은? :"+turnCount);
+    turnCount++;    // 턴 1 증가
     itTurn.value = turnCount;   // 현재 턴 표시
 }
 
@@ -91,7 +91,6 @@ window.onload = function () {
     }
 
 }
-
 
 
 
