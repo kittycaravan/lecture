@@ -10,9 +10,11 @@ function tv(str){
 }
 function tvPlayerInfo(str){
     var screenString = screenPlayerInfo.value;
-    // screenString = screenString + str;
-    // screenPlayerInfo.value = screenString;
     screenPlayerInfo.value = str;
+}
+function tvGameObject(str){
+    var screenString = screenGameObject.value;
+    screenGameObject.value = str;
 }
 function br(){
     document.write("<br>");
