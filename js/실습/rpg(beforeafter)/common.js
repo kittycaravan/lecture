@@ -7,6 +7,8 @@ function tv(str){
     var screenString = screenMessageBox.value;
     screenString = screenString + str;
     screenMessageBox.value = screenString;
+
+    screenMessageBoxScrollToBot();
 }
 /* textarea 텍스트 지우기 */
 function tvClear(){
