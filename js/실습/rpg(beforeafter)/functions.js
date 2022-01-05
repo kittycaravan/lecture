@@ -46,64 +46,96 @@ function procBattleTurn() {
     } else {
         displayCharactersInfo();
         return true;
-    }    
+    }
 }
 
-function turn(){
-    if(currentMode == "전투"){
+function turn() {
+    if (currentMode == "전투") {
         procBattleTurn();
     } else {
         procNormalTurn();
     }
     turnCount++;
     itTurn.value = turnCount;   // 현재 턴 표시
-    console.log("현재 턴:"+turnCount);
+    console.log("현재 턴:" + turnCount);
 }
 
-function procNormalTurn(){
+function procNormalTurn() {
     // tvClear();  // 메세지창을 지움
     //비전투 상황 시의 턴 처리
     //임시: "아무것도 안하고 시간이 흘러감" 이라고 출력
-    tv("특별한 것은 보이지 않는다.\n");       
+    tv("특별한 것은 보이지 않는다.\n");
 }
 
-function screenMessageBoxScrollToBot(){
+function screenMessageBoxScrollToBot() {
     // textarea.scrollTop = textarea.scrollHeight;
     screenMessageBox.scrollTop = screenMessageBox.scrollHeight;
 }
 
-function moveEast(){
-    tv("동쪽으로 이동했습니다.");
+// function moveEast(){
+//     tv("동쪽으로 이동했습니다.");
+//     turn();
+// }
+// function moveWest(){
+//     tv("서쪽으로 이동했습니다.");
+//     turn();
+// }
+// function moveSouth(){
+//     tv("남쪽으로 이동했습니다.");
+//     turn();
+// }
+// function moveNorth(){
+//     tv("북쪽으로 이동했습니다.");
+//     turn();
+// }
+// function moveUp(){
+//     tv("위쪽으로 이동했습니다.");
+//     turn();
+// }
+
+function move(direction) {
+    var nowRoom = getCurrentRoomObject()
+    var connectionRoomId = nowRoom.getIdByDirection(direction);
+    if(connectionRoomId == 0){
+        tv("갈수 없음\n");
+        return;
+    } else {
+        currentRoomId = connectionRoomId;
+        console.log("현재 방번호:"+currentRoomId);
+    }
+
+    switch (direction) {
+        case "동":
+            tv("동쪽으로 이동했습니다.\n");
+            break;
+        case "서":
+            tv("서쪽으로 이동했습니다.\n");
+            break;
+        case "남":
+            tv("남쪽으로 이동했습니다.\n");
+            break;
+        case "북":
+            tv("북쪽으로 이동했습니다.\n");
+            break;
+        case "위":
+            tv("위쪽으로 이동했습니다.\n");
+            break;
+        case "밑":
+            tv("아래쪽으로 이동했습니다.\n");
+            break;
+    }
+    displayRoomInfo();
     turn();
 }
-function moveWest(){
-    tv("서쪽으로 이동했습니다.");
-    turn();
-}
-function moveSouth(){
-    tv("남쪽으로 이동했습니다.");
-    turn();
-}
-function moveNorth(){
-    tv("북쪽으로 이동했습니다.");
-    turn();
-}
-function moveUp(){
-    tv("위쪽으로 이동했습니다.");
-    turn();
-}
-function moveDown(){
-    tv("아래쪽으로 이동했습니다.");
-    turn();
-}
+
 /* 현재 방 id를 가지고 방 배열에서 해당 방 객체를 리턴 */
-function getCurrentRoomObject(){    
-    for(var i=0;i<roomArray.length;i++){
-        if(roomArray[i].id == currentRoomId){
+function getCurrentRoomObject() {
+    for (var i = 0; i < roomArray.length; i++) {
+        if (roomArray[i].id == currentRoomId) {
             return roomArray[i];
         }
     }
 }
-function displayRoomInfo(){
+function displayRoomInfo() {
     getCurrentRoomObject().displayRoomInfo();
 }

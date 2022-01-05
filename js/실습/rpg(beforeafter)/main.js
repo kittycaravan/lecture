@@ -25,12 +25,5 @@ window.onload = function () {
     itTurn = document.getElementById("input_txt_turn");
     
     displayCharactersInfo();
-    // roomA.displayRoomInfo();
-    // roomArray[0].displayRoomInfo();
-    // getCurrentRoomObject().displayRoomInfo();
     displayRoomInfo();
 }
-
-
-
-

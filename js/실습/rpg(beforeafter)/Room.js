@@ -49,4 +49,30 @@ function Room(roomName,desc,id,e,w,s,n,u,d){
         enters = enters + " ]";
         return enters;
     }
+
+    /* 매개변수로 이동 방향 ex. "동" 을 전달해주면 현재 이 객체의 해당 방향에 대한 연결 방 id 값을 리턴 하는 함수 */
+    this.getIdByDirection = function(direction){
+        switch(direction){
+            case "동":
+                return e;
+                break;
+            case "서":
+                return w;
+                break;
+            case "남":
+                return s;
+                break;
+            case "북":
+                return n;
+                break;
+            case "위":
+                return u;
+                break;
+            case "밑":
+                return d;
+                break;
+        }
+    }
+
+    
 }
