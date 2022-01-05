@@ -24,7 +24,8 @@ function endBattle() {
     // - 전투 종료 후 경험치 획득 메세지 출력 ex. 불쌍한 토끼, 엠피스에게 경험치 100 을 주고 죽었습니다.
     tv("불쌍한 " + orc.name + ", " + elf.name + "에게 경험치 " + orc.exp + "을 주고 죽었습니다.\n");
     getReward();
-
+    currentMode = "비전투"; // 현재 모드를 비전투로 전환
+    tvGameObjectClear();    // 게임 오브젝트 화면을 지움
 }
 
 function procBattleTurn() {
@@ -39,8 +40,8 @@ function procBattleTurn() {
 
     // hp 검사하기
     if (elf.currentHp <= 0 || orc.currentHp <= 0) {
-        endBattle();    // 전투 종료 처리
         displayCharactersInfo();
+        endBattle();    // 전투 종료 처리
         return false;
     } else {
         displayCharactersInfo();
@@ -49,10 +50,22 @@ function procBattleTurn() {
 }
 
 function turn(){
-    procBattleTurn();
+    if(currentMode == "전투"){
+        procBattleTurn();
+    } else {
+        procNormalTurn();
+    }
     turnCount++;
     itTurn.value = turnCount;   // 현재 턴 표시
     console.log("현재 턴:"+turnCount);
+}
+
+function procNormalTurn(){
+    tvClear();  // 메세지창을 지움
+    //todo 비전투 상황 시의 턴 처리
+    //임시: "아무것도 안하고 시간이 흘러감" 이라고 출력
+    tv("아무것도 안하고 시간이 흘러감 \n");
+    
 }
 
 
@@ -63,6 +76,7 @@ var orc = new Monster("오크전사", 100, 10);
 var elf = new Character("엠피스", 200, 30);
 var turnCount = 0;
 var itTurn; // 현재 턴 수를 표시하는 input text 변수
+var currentMode = "전투"; // 현재 플레이 상태를 표시하는 변수 (비전투, 전투)
 
 window.onload = function () {
     screenMessageBox = document.getElementById("screen_message_box");

@@ -8,14 +8,27 @@ function tv(str){
     screenString = screenString + str;
     screenMessageBox.value = screenString;
 }
+/* textarea 텍스트 지우기 */
+function tvClear(){
+    screenMessageBox.value = "";
+}
 function tvPlayerInfo(str){
     var screenString = screenPlayerInfo.value;
     screenPlayerInfo.value = str;
+}
+/* textarea 텍스트 지우기 */
+function tvPlayerInfoClear(){
+    screenPlayerInfo.value = "";
 }
 function tvGameObject(str){
     var screenString = screenGameObject.value;
     screenGameObject.value = str;
 }
+/* textarea 텍스트 지우기 */
+function tvGameObjectClear(){
+    screenGameObject.value = "";
+}
+
 function br(){
     document.write("<br>");
 }
