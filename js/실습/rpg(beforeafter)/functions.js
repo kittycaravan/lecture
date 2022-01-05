@@ -61,10 +61,10 @@ function turn(){
 }
 
 function procNormalTurn(){
-    tvClear();  // 메세지창을 지움
+    // tvClear();  // 메세지창을 지움
     //비전투 상황 시의 턴 처리
     //임시: "아무것도 안하고 시간이 흘러감" 이라고 출력
-    tv("아무것도 안하고 시간이 흘러감 \n");   
+    tv("특별한 것은 보이지 않는다.\n");       
 }
 
 function screenMessageBoxScrollToBot(){
@@ -72,3 +72,27 @@ function screenMessageBoxScrollToBot(){
     screenMessageBox.scrollTop = screenMessageBox.scrollHeight;
 }
 
+function moveEast(){
+    tv("동쪽으로 이동했습니다.");
+    turn();
+}
+function moveWest(){
+    tv("서쪽으로 이동했습니다.");
+    turn();
+}
+function moveSouth(){
+    tv("남쪽으로 이동했습니다.");
+    turn();
+}
+function moveNorth(){
+    tv("북쪽으로 이동했습니다.");
+    turn();
+}
+function moveUp(){
+    tv("위쪽으로 이동했습니다.");
+    turn();
+}
+function moveDown(){
+    tv("아래쪽으로 이동했습니다.");
+    turn();
+}
