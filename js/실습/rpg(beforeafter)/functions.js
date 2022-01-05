@@ -96,3 +96,14 @@ function moveDown(){
     tv("아래쪽으로 이동했습니다.");
     turn();
 }
+/* 현재 방 id를 가지고 방 배열에서 해당 방 객체를 리턴 */
+function getCurrentRoomObject(){    
+    for(var i=0;i<roomArray.length;i++){
+        if(roomArray[i].id == currentRoomId){
+            return roomArray[i];
+        }
+    }
+}
+function displayRoomInfo(){
+    getCurrentRoomObject().displayRoomInfo();
+}
